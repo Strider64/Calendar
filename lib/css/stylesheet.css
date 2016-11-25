@@ -247,6 +247,11 @@ section.content {
       color: #F8EEE7; }
   section.content td.fade {
     color: #aaa; }
+  section.content td.eggplant {
+    background-color: #49274A; }
+  section.content a.sand {
+    font-size: 1.8rem;
+    color: #F4DECB; }
   section.content .controls {
     position: relative;
     top: 340px;
