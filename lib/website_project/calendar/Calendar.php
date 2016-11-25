@@ -38,12 +38,14 @@ class Calendar extends Location {
     protected $alphaDay = [0 => "Sun", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"];
     protected $imporantDates = [];
     protected $myPage = \NULL;
+    protected $size = \NULL;
 
     /* Constructor to create the calendar */
 
-    public function __construct($date = NULL) {
+    public function __construct($date = NULL, $size = 50) {
         $this->selectedMonth = new \DateTime($date, new \DateTimeZone("America/Detroit"));
         $this->current = new \DateTime($date, new \DateTimeZone("America/Detroit"));
+        $this->size = $size;
     }
 
     public function fileLocation() {
@@ -100,11 +102,11 @@ class Calendar extends Location {
     }
 
     protected function form() {
-
+        
         $this->current->modify("first day of this month");
         $this->days = $this->current->format('t'); // Number of days in the month:
         /* Create the table */
-        $this->theForm .= '<table class="span6">' . "\n";
+        $this->theForm .= '<table style="width:' . $this->size . '%;">' . "\n";
         /* Create heading for the calendar */
         $this->theForm .= "<tr>\t\n";
         $this->theForm .= '<th class="tableHeading" colspan="7">' . $this->current->format('F Y') . '</th>' . "\t\t\n";
