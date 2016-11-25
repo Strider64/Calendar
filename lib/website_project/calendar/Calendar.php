@@ -84,24 +84,24 @@ class Calendar extends Location {
     }
 
     protected function weekdays() {
-        $this->theForm .= "<tr>\n";
+        $this->theForm .= "\t<tr>\n";
         $x = 1;
         while ($x <= 7) {
             if ($this->selectedMonth->format('n') === $this->current->format('n')) {
                 if ($this->selectedMonth->format("F j, Y") === $this->current->format("F j, Y")) {
-                    $this->theForm .= '<td class="eggplant"><a class="sand" href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+                    $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
                 } else {
-                    $this->theForm .= '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+                    $this->theForm .= "\t\t" . '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
                 }
                 
             } else {
-                $this->theForm .= '<td class="fade">' . $this->current->format("j") . '</td>' . "\n";
+                $this->theForm .= "\t\t" . '<td class="fade">' . $this->current->format("j") . '</td>' . "\n";
             }
 
             $this->current->modify("+1 day");
             $x += 1;
         }
-        $this->theForm .= "</tr>\n";
+        $this->theForm .= "\t</tr>\n";
     }
 
     protected function form() {
@@ -111,16 +111,16 @@ class Calendar extends Location {
         /* Create the table */
         $this->theForm .= '<table style="width:' . $this->size . '%;">' . "\n";
         /* Create heading for the calendar */
-        $this->theForm .= "<tr>\t\n";
-        $this->theForm .= '<th class="tableHeading" colspan="7">' . $this->current->format('F Y') . '</th>' . "\t\t\n";
-        $this->theForm .= "</tr>\t\n";
+        $this->theForm .= "\t<tr>\n";
+        $this->theForm .= "\t\t" . '<th class="tableHeading" colspan="7">' . $this->current->format('F Y') . '</th>' . "\n";
+        $this->theForm .= "\t</tr>\n";
 
         /* Create days of the week heading (columns) */
-        $this->theForm .= "<tr>\t\n";
+        $this->theForm .= "\t<tr>\n";
         for ($x = 0; $x <= 6; $x++) {
-            $this->theForm .= '<th>' . $this->alphaDay[$x] . '</th>' . "\t\t\n";
+            $this->theForm .= "\t\t<th>" . $this->alphaDay[$x] .  "</th>\n";
         }
-        $this->theForm .= "</tr>\t\n";
+        $this->theForm .= "\t</tr>\n";
 
         /* Generate Actual Days of the Week */
         $this->current->modify("last sun of previous month");
