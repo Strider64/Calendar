@@ -39,7 +39,6 @@ President John R Pepp
     <head>
         <meta charset="UTF-8">
         <title>Calendar</title>
-        <link rel="stylesheet" href="lib/css/css/font-awesome.css">
         <link rel="stylesheet" href="lib/css/stylesheet.css">
     </head>
     <body>
@@ -48,12 +47,12 @@ President John R Pepp
         </header>
         <section class="container content">
             <?php
-            echo $setMonth->returnControls;
             echo $month->generateCalendar();
+            echo $setMonth->returnControls;
             ?>   
         </section>
         <footer class="container footer">
-            <p class="footer-name">&copy;<?php echo date("Y"); ?> <span itemprop="name">John R. Pepp</span> <span class="spacing" itemprop="streetAddress">9198 Woodring</span><span class="spacing" itemprop="addressLocality">Livonia</span><span class="spacing" itemprop="addressRegion">MI</span><span class="spacing" itemprop="postalCode">48150</span><span class="spacing" itemprop="telephone">(734) 748-7661</span></p>            
+            <p class="footer-name">&copy;<?php echo date("Y"); ?> <span class="spacing" itemprop="name">John R. Pepp</span> <span class="spacing" itemprop="streetAddress">9198 Woodring</span><span class="spacing" itemprop="addressLocality">Livonia</span><span class="spacing" itemprop="addressRegion">MI</span><span class="spacing" itemprop="postalCode">48150</span><span class="spacing" itemprop="telephone">(734) 748-7661</span></p>            
         </footer>
     </body>
 </html>
