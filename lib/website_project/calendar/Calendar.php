@@ -103,14 +103,14 @@ class Calendar extends Location {
 
         $this->current->modify("first day of this month");
         $this->days = $this->current->format('t'); // Number of days in the month:
-        /* Create a div box and an unordered list */
+        /* Create the table */
         $this->theForm .= '<table class="span6">' . "\n";
         /* Create heading for the calendar */
         $this->theForm .= "<tr>\t\n";
         $this->theForm .= '<th class="tableHeading" colspan="7">' . $this->current->format('F Y') . '</th>' . "\t\t\n";
         $this->theForm .= "</tr>\t\n";
 
-        /* Create days of the week heading */
+        /* Create days of the week heading (columns) */
         $this->theForm .= "<tr>\t\n";
         for ($x = 0; $x <= 6; $x++) {
             $this->theForm .= '<th>' . $this->alphaDay[$x] . '</th>' . "\t\t\n";
