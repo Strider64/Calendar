@@ -37,6 +37,7 @@ class Calendar extends Location {
     protected $imporantDates = [];
     protected $myPage = \NULL;
     protected $size = \NULL;
+    protected $now = \NULL;
 
     /* Constructor to create the calendar */
 
@@ -83,17 +84,23 @@ class Calendar extends Location {
         }
     }
 
-    protected function weekdays() {
+    /* Highlight Today's Date on Calendar */
+    protected function currentDays() {
+        if ($this->now->format("F j, Y") === $this->current->format("F j, Y")) {
+            $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+        } else {
+            $this->theForm .= "\t\t" . '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+        }
+    }
+
+    /* Draw Days (make Table Cells) on Calendar */
+    protected function drawDays() {
+        $this->now = new \DateTime("Now", new \DateTimeZone("America/Detroit"));
         $this->theForm .= "\t<tr>\n";
         $x = 1;
         while ($x <= 7) {
             if ($this->selectedMonth->format('n') === $this->current->format('n')) {
-                if ($this->selectedMonth->format("F j, Y") === $this->current->format("F j, Y")) {
-                    $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
-                } else {
-                    $this->theForm .= "\t\t" . '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
-                }
-                
+                $this->currentDays();
             } else {
                 $this->theForm .= "\t\t" . '<td class="fade">' . $this->current->format("j") . '</td>' . "\n";
             }
@@ -105,7 +112,7 @@ class Calendar extends Location {
     }
 
     protected function form() {
-        
+
         $this->current->modify("first day of this month");
         $this->days = $this->current->format('t'); // Number of days in the month:
         /* Create the table */
@@ -118,7 +125,7 @@ class Calendar extends Location {
         /* Create days of the week heading (columns) */
         $this->theForm .= "\t<tr>\n";
         for ($x = 0; $x <= 6; $x++) {
-            $this->theForm .= "\t\t<th>" . $this->alphaDay[$x] .  "</th>\n";
+            $this->theForm .= "\t\t<th>" . $this->alphaDay[$x] . "</th>\n";
         }
         $this->theForm .= "\t</tr>\n";
 
@@ -127,7 +134,7 @@ class Calendar extends Location {
 
         $num = 1;
         while ($num < 7) {
-            $this->weekdays();
+            $this->drawDays();
             $num += 1;
         }
 
@@ -152,7 +159,7 @@ class Calendar extends Location {
     }
 
     public function generateCalendar() {
-        return $this->form(); 
+        return $this->form();
     }
 
 }

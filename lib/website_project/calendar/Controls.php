@@ -55,10 +55,10 @@ class Controls extends Location {
     }
 
     protected function calButtons() {
-        $this->displayControls = '<div class="controls">' . PHP_EOL;
-        $this->displayControls .= '<a data-pos="' . self::$previous . '" class="pic-slide-left fa fa-angle-double-left" href="' . $this->myPage . '?page=' . self::$previous  .' ">&nbsp;</a>' . PHP_EOL;
-        $this->displayControls .= '<a data-pos="' . self::$next . '" class="pic-slide-right fa fa-angle-double-right" href=" ' . $this->myPage . '?page=' . self::$next . '">&nbsp;</a>' . PHP_EOL;
-        $this->displayControls .= '</div>' . PHP_EOL;
+        $this->displayControls = '<div class="controls">' . "\n";
+        $this->displayControls .= '<a data-pos="' . self::$previous . '" class="prev-left" href="' . $this->myPage . '?page=' . self::$previous  .' ">Prev</a>' . "\n";
+        $this->displayControls .= '<a data-pos="' . self::$next . '" class="next-right" href=" ' . $this->myPage . '?page=' . self::$next . '">Next</a>' . "\n";
+        $this->displayControls .= '</div>' . "\n";
         return $this->displayControls;
     }
 
