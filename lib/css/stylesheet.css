@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Serif+Caption|Palanquin+Dark");
+/* 
+    Created on : Feb 16, 2016, 8:22:58 AM
+    Author     : strider64
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, textarea, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.container {
+  /* * For IE 6/7 only * Include this rule to trigger hasLayout and contain floats. */
+  *zoom: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+.container:after {
+  clear: both; }
+
+.container:before,
+.container:after {
+  content: " ";
+  display: table; }
+
+.row {
+  /* * For IE 6/7 only * Include this rule to trigger hasLayout and contain floats. */
+  *zoom: 1; }
+
+.row:after {
+  clear: both; }
+
+.row:before,
+.row:after {
+  content: " ";
+  display: table; }
+
+[class^="span"] {
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */ }
+
+[class^="span"]:first-child {
+  margin-left: 0; }
+
+.span1 {
+  width: 8.333333333333332%; }
+
+.span2 {
+  width: 16.666666666666664%; }
+
+.span3 {
+  width: 25%; }
+
+.span4 {
+  width: 33.33333333333333%; }
+
+.span5 {
+  width: 41.66666666666667%; }
+
+.span6 {
+  width: 50%; }
+
+.span7 {
+  width: 58.333333333333336%; }
+
+.span8 {
+  width: 66.66666666666666%; }
+
+.span9 {
+  width: 75%; }
+
+.span10 {
+  width: 83.33333333333334%; }
+
+.span11 {
+  width: 91.66666666666666%; }
+
+.span12 {
+  width: 100%; }
+
+[class^="m-span"] {
+  padding: 10px 0;
+  margin-left: 3.125%;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */ }
+
+[class^="m-span"]:first-child {
+  margin-left: 0; }
+
+.m-span1 {
+  width: 5.46875%; }
+
+.m-span2 {
+  width: 14.0625%; }
+
+.m-span3 {
+  width: 22.65625%; }
+
+.m-span4 {
+  width: 31.25%; }
+
+.m-span5 {
+  width: 39.84375%; }
+
+.m-span6 {
+  width: 48.4375%; }
+
+.m-span7 {
+  width: 57.03125%; }
+
+.m-span8 {
+  width: 65.625%; }
+
+.m-span9 {
+  width: 74.21875%; }
+
+.m-span10 {
+  width: 82.8125%; }
+
+.m-span11 {
+  width: 91.40625%; }
+
+.m-span12 {
+  width: 100%; }
+
+/*******************************************
+TYPOGRAPHY CSS STYLING
+********************************************/
+h1, th {
+  font-family: 'PT Serif Caption', serif; }
+
+p, td {
+  font-family: 'Palanquin Dark', sans-serif; }
+
+/*******************************************
+GENERAL PAGE CSS STYLING
+********************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #F4DECB; }
+
+/*******************************************
+HEADING CSS STYLING
+********************************************/
+header.header {
+  height: 150px;
+  background-color: #94618E; }
+  header.header h1 {
+    font-size: 4.2rem;
+    line-height: 150px;
+    color: #F4DECB;
+    text-align: center; }
+
+/*******************************************
+MAIN CONTENT CSS STYLING
+********************************************/
+section.content {
+  height: 700px;
+  background-color: #F8EEE7;
+  padding: 20px;
+  /* TABLE CSS STYLING */ }
+  section.content table {
+    border-collapse: collapse;
+    margin: 0 auto; }
+  section.content table, section.content td {
+    -moz-box-shadow: 0 8px 4px -6px rgba(148, 97, 142, 0.8);
+    -webkit-box-shadow: 0 8px 4px -6px rgba(148, 97, 142, 0.8);
+    box-shadow: 0 8px 4px -6px rgba(148, 97, 142, 0.8);
+    border: 3px solid #F4DECB; }
+  section.content th.tableHeading {
+    background-color: #49274A;
+    font-size: 2.4rem;
+    color: #F4DECB; }
+  section.content th {
+    vertical-align: bottom;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F4DECB;
+    width: 14.2857143%;
+    height: 50px;
+    padding: 10px;
+    background-color: #94618E; }
+  section.content td {
+    background-color: #94618E;
+    vertical-align: middle;
+    width: 14.2857143%;
+    height: 80px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #F8EEE7;
+    padding: 10px; }
+    section.content td a {
+      text-decoration: none;
+      color: #F8EEE7; }
+  section.content td.fade {
+    color: #aaa; }
+  section.content .controls {
+    position: absolute; }
+  section.content .pic-slide-left, section.content .pic-slide-right {
+    position: relative;
+    bottom: -15px;
+    left: 22px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #F8EEE7;
+    text-align: center; }
+    section.content .pic-slide-left:hover, section.content .pic-slide-right:hover {
+      color: #F4DECB; }
+  section.content .pic-slide-right {
+    left: 512px; }
+
+/*******************************************
+FOOTER CSS STYLING
+********************************************/
+footer.footer {
+  height: 50px;
+  background-color: #94618E; }
+  footer.footer p.footer-name {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 50px;
+    color: #49274A; }
+    footer.footer p.footer-name span {
+      padding-left: 5px; }
+
+/*# sourceMappingURL=stylesheet.css.map */
