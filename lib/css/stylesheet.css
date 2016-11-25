@@ -208,13 +208,13 @@ header.header {
 MAIN CONTENT CSS STYLING
 ********************************************/
 section.content {
-  height: 630px;
+  height: 700px;
   background-color: #F8EEE7;
   padding: 20px;
   /* TABLE CSS STYLING */ }
   section.content table {
-    border-collapse: collapse;
-    margin: 0 auto; }
+    position: relative;
+    border-collapse: collapse; }
   section.content table, section.content td {
     -moz-box-shadow: 0 8px 4px -6px rgba(148, 97, 142, 0.8);
     -webkit-box-shadow: 0 8px 4px -6px rgba(148, 97, 142, 0.8);
@@ -254,22 +254,21 @@ section.content {
     color: #F4DECB; }
   section.content .controls {
     position: relative;
-    top: 340px;
+    bottom: 574px;
     display: block;
     width: auto;
-    height: auto;
-    margin-top: -100px; }
-  section.content .pic-slide-left, section.content .pic-slide-right {
+    height: auto; }
+  section.content .prev-left, section.content .next-right {
     text-decoration: none;
-    font-size: 6rem;
-    color: #94618E;
+    font-size: 2rem;
+    color: #F4DECB;
     text-align: center;
-    margin-left: 50px; }
-    section.content .pic-slide-left:hover, section.content .pic-slide-right:hover {
-      color: #49274A; }
-  section.content .pic-slide-right {
+    margin-left: 30px; }
+    section.content .prev-left:hover, section.content .next-right:hover {
+      color: #F8EEE7; }
+  section.content .next-right {
     float: right;
-    margin-right: 50px; }
+    margin-right: 605px; }
 
 /*******************************************
 FOOTER CSS STYLING
@@ -281,7 +280,7 @@ footer.footer {
     text-align: center;
     font-size: 1.2rem;
     line-height: 50px;
-    color: #49274A; }
+    color: #F4DECB; }
     footer.footer p.footer-name span {
       padding-left: 5px; }
 
