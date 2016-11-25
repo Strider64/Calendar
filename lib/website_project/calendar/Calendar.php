@@ -152,8 +152,6 @@ class Calendar extends Location {
     }
 
     public function generateCalendar() {
-
-
         return $this->form(); // create calendar form and return it to the constructor:
     }
 
