@@ -11,8 +11,6 @@ class Calendar extends Location {
 
     protected $date = \NULL;
     protected $page = 0;
-    private $dayPos;
-    private $memo = \NULL;
     public $output = \NULL;
     protected $username = \NULL;
     protected $query = \NULL;
@@ -90,7 +88,12 @@ class Calendar extends Location {
         $x = 1;
         while ($x <= 7) {
             if ($this->selectedMonth->format('n') === $this->current->format('n')) {
-                $this->theForm .= '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+                if ($this->selectedMonth->format("F j, Y") === $this->current->format("F j, Y")) {
+                    $this->theForm .= '<td class="eggplant"><a class="sand" href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+                } else {
+                    $this->theForm .= '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+                }
+                
             } else {
                 $this->theForm .= '<td class="fade">' . $this->current->format("j") . '</td>' . "\n";
             }
