@@ -208,7 +208,7 @@ header.header {
 MAIN CONTENT CSS STYLING
 ********************************************/
 section.content {
-  height: 700px;
+  height: 630px;
   background-color: #F8EEE7;
   padding: 20px;
   /* TABLE CSS STYLING */ }
@@ -248,19 +248,23 @@ section.content {
   section.content td.fade {
     color: #aaa; }
   section.content .controls {
-    position: absolute; }
-  section.content .pic-slide-left, section.content .pic-slide-right {
     position: relative;
-    bottom: -15px;
-    left: 22px;
+    top: 340px;
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: -100px; }
+  section.content .pic-slide-left, section.content .pic-slide-right {
     text-decoration: none;
-    font-size: 2rem;
-    color: #F8EEE7;
-    text-align: center; }
+    font-size: 6rem;
+    color: #94618E;
+    text-align: center;
+    margin-left: 50px; }
     section.content .pic-slide-left:hover, section.content .pic-slide-right:hover {
-      color: #F4DECB; }
+      color: #49274A; }
   section.content .pic-slide-right {
-    left: 512px; }
+    float: right;
+    margin-right: 50px; }
 
 /*******************************************
 FOOTER CSS STYLING
