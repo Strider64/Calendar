@@ -117,17 +117,14 @@ class Calendar extends Location {
         }
         $this->theForm .= "</tr>\t\n";
 
-        if ($this->current->format('w') !== 0) {
-            $this->current->modify("last sun of previous month");
-        }
+        /* Generate Actual Days of the Week */
+        $this->current->modify("last sun of previous month");
 
         $num = 1;
         while ($num < 7) {
             $this->weekdays();
             $num += 1;
         }
-
-
 
         /* Close the HTML tags */
         return $this->theForm .= "</table>\n";
