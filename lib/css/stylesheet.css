@@ -268,24 +268,15 @@ section.content {
   section.content .next-right {
     margin-left: 450px; }
 
-figure.imageCalendar {
-  overflow: hidden;
+div.picture {
   position: relative;
-  border: 12px solid #94618E;
-  display: inline-block;
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  min-height: 593px;
+  height: 591px;
+  background-color: #94618E;
   margin-top: 10px; }
-  figure.imageCalendar img {
+  div.picture figure.imageCalendar {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 600px;
-    height: 100%;
-    max-height: 596px; }
+    padding: 0; }
 
 /*******************************************
 FOOTER CSS STYLING
