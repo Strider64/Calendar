@@ -132,6 +132,9 @@ class Calendar extends Location {
         /* Generate Actual Days of the Week */
         $this->current->modify("last sun of previous month");
 
+        /*
+         * Output 7 weeks (35 days) guarantees an even calendar.
+         */
         $num = 1;
         while ($num < 7) {
             $this->drawDays();
