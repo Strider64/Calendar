@@ -87,9 +87,9 @@ class Calendar extends Location {
     /* Highlight Today's Date on Calendar */
     protected function currentDays() {
         if ($this->now->format("F j, Y") === $this->current->format("F j, Y")) {
-            $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+            $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="daily.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
         } else {
-            $this->theForm .= "\t\t" . '<td><a href="booking.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+            $this->theForm .= "\t\t" . '<td><a href="daily.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
         }
     }
 
