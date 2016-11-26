@@ -133,7 +133,7 @@ class Calendar extends Location {
         $this->current->modify("last sun of previous month");
 
         /*
-         * Output 7 weeks (35 days) guarantees an even calendar.
+         * Output 7 rows (49 days) guarantees an even calendar.
          */
         $num = 1;
         while ($num < 7) {
