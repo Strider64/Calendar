@@ -4,7 +4,7 @@ require_once 'lib/includes/utilities.inc.php';
 use website_project\calendar\Calendar as Calendar;
 use website_project\calendar\Controls as Controls;
 
-$month = new Calendar(); // Calendar Class:
+$month = new Calendar(null, 100); // Calendar Class:
 $setMonth = new Controls(); // Calendar Control:
 
 /*
@@ -45,12 +45,20 @@ President John R Pepp
         <header class="container header">
             <h1 class="heading">Burroughs Farms Calendar</h1>
         </header>
-        <section class="container content">
-            <?php
-            echo $month->generateCalendar();
-            echo $setMonth->returnControls;
-            ?>   
-        </section>
+        <div class="container">
+            
+            <section class="span6 content">
+                <?php
+                echo $month->generateCalendar();
+                echo $setMonth->returnControls;
+                ?> 
+            </section>
+
+            <figure class="span6 imageCalendar">`
+                <img src="lib/user_uploads/img-burroughs-farms-2.jpg">
+            </figure>
+
+        </div>
         <footer class="container footer">
             <p class="footer-name">&copy;<?php echo date("Y"); ?> <span class="spacing" itemprop="name">John R. Pepp</span> <span class="spacing" itemprop="streetAddress">9198 Woodring</span><span class="spacing" itemprop="addressLocality">Livonia</span><span class="spacing" itemprop="addressRegion">MI</span><span class="spacing" itemprop="postalCode">48150</span><span class="spacing" itemprop="telephone">(734) 748-7661</span></p>            
         </footer>
