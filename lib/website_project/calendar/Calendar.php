@@ -42,7 +42,7 @@ class Calendar extends Location {
 
     /* Constructor to create the calendar */
 
-    public function __construct($date = NULL, $size = 50) {
+    public function __construct($date = "Now", $size = 100) {
         $this->selectedMonth = new \DateTime($date, new \DateTimeZone("America/Detroit"));
         $this->current = new \DateTime($date, new \DateTimeZone("America/Detroit"));
         $this->size = $size;
@@ -52,9 +52,8 @@ class Calendar extends Location {
         $this->myPage = $this->returnLocation();
     }
 
-    public function setDate($setDate) {
-        $this->selectedMonth = new \DateTime($setDate, new \DateTimeZone("America/Detroit"));
-        $this->current = new \DateTime($setDate, new \DateTimeZone("America/Detroit"));
+    public function setDate($setDate, $size = 100) {
+        self::__construct($setDate, $size);
     }
 
     public function returnDate() {
