@@ -121,7 +121,7 @@ class Calendar extends Location {
 
 
 
-    protected function form() {
+    protected function display() {
 
         $this->current->modify("first day of this month");
         $this->n = $this->current->format("n");
@@ -173,7 +173,7 @@ class Calendar extends Location {
     }
 
     public function generateCalendar() {
-        return $this->form();
+        return $this->display();
     }
 
 }
