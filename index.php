@@ -7,6 +7,7 @@ use website_project\calendar\Controls as Controls;
 $month = new Calendar(null, 100); // Calendar Class:
 $setMonth = new Controls(); // Calendar Control:
 
+//echo "<pre>" . print_r($n, 1) . "</pre>";
 /*
  * Grab user's input of calendar month change
  */
@@ -14,6 +15,7 @@ $page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
 /*
  * If user didn't change month and page equals zero
  */
+
 if (isset($page) && $page === 0) {
     $_SESSION['page'] = 0; // Current Month to Display:
 }
@@ -24,11 +26,13 @@ if ($page) {
      * Determine Calendar to display based on user's input
      */
     $setMonth->setMonth($page); // Set the result of the key press:
+    
     $_SESSION['page'] = $page; // Set the current month display in sessions:
     $currentMonth = $setMonth->returnDate; // Get the result of key press:
     $month->setDate($currentMonth); // Set the current Month to display:
 }
 ?>
+
 <!DOCTYPE html>
 <!--
 Pepster's Place 
@@ -54,9 +58,11 @@ President John R Pepp
                 ?> 
             </section>
 
-            <figure class="span6 imageCalendar">`
-                <img src="lib/user_uploads/img-burroughs-farms-2.jpg">
-            </figure>
+            <div class="span6 picture">`
+                <figure class="imageCalendar">
+                    <img class="current" src="lib/user_uploads/img-burroughs-farms-<?php echo $month->n; ?>.jpg">
+                </figure>
+            </div>
 
         </div>
         <footer class="container footer">
