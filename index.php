@@ -7,7 +7,6 @@ use website_project\calendar\Controls as Controls;
 $month = new Calendar(null, 100); // Calendar Class:
 $setMonth = new Controls(); // Calendar Control:
 
-//echo "<pre>" . print_r($n, 1) . "</pre>";
 /*
  * Grab user's input of calendar month change
  */
