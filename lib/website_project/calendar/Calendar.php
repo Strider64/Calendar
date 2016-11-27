@@ -31,6 +31,7 @@ class Calendar extends Location {
     protected $prevMonth = \NULL;
     protected $nextMonth = \NULL;
     protected $selectedMonth = \NULL;
+    public $n = \NULL;
     protected $calendar = array();
     protected $theForm = \NULL;
     protected $alphaDay = [0 => "Sun", 1 => "Mon", 2 => "Tue", 3 => "Wed", 4 => "Thu", 5 => "Fri", 6 => "Sat"];
@@ -54,6 +55,10 @@ class Calendar extends Location {
     public function setDate($setDate) {
         $this->selectedMonth = new \DateTime($setDate, new \DateTimeZone("America/Detroit"));
         $this->current = new \DateTime($setDate, new \DateTimeZone("America/Detroit"));
+    }
+
+    public function returnDate() {
+        return $this->selectedMonth;
     }
 
     public function getHolidayNames() {
@@ -85,6 +90,7 @@ class Calendar extends Location {
     }
 
     /* Highlight Today's Date on Calendar */
+
     protected function currentDays() {
         if ($this->now->format("F j, Y") === $this->current->format("F j, Y")) {
             $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="daily.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
@@ -94,7 +100,9 @@ class Calendar extends Location {
     }
 
     /* Draw Days (make Table Cells) on Calendar */
+
     protected function drawDays() {
+
         $this->now = new \DateTime("Now", new \DateTimeZone("America/Detroit"));
         $this->theForm .= "\t<tr>\n";
         $x = 1;
@@ -111,9 +119,12 @@ class Calendar extends Location {
         $this->theForm .= "\t</tr>\n";
     }
 
+
+
     protected function form() {
 
         $this->current->modify("first day of this month");
+        $this->n = $this->current->format("n");
         $this->days = $this->current->format('t'); // Number of days in the month:
         /* Create the table */
         $this->theForm .= '<table style="width:' . $this->size . '%;">' . "\n";
