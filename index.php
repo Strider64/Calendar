@@ -4,20 +4,14 @@ require_once 'lib/includes/utilities.inc.php';
 use website_project\calendar\Calendar as Calendar;
 use website_project\calendar\Controls as Controls;
 
-$month = new Calendar(null, 100); // Calendar Class:
+$month = new Calendar(); // Calendar Class:
 $setMonth = new Controls(); // Calendar Control:
 
 /*
  * Grab user's input of calendar month change
  */
 $page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
-/*
- * If user didn't change month and page equals zero
- */
 
-if (isset($page) && $page === 0) {
-    $_SESSION['page'] = 0; // Current Month to Display:
-}
 /* Set to Previous Month or Next Month depending */
 /* on what button the user clicks on .                       */
 if ($page) {
@@ -25,8 +19,6 @@ if ($page) {
      * Determine Calendar to display based on user's input
      */
     $setMonth->setMonth($page); // Set the result of the key press:
-    
-    $_SESSION['page'] = $page; // Set the current month display in sessions:
     $currentMonth = $setMonth->returnDate; // Get the result of key press:
     $month->setDate($currentMonth); // Set the current Month to display:
 }
@@ -49,7 +41,7 @@ President John R Pepp
             <h1 class="heading">Burroughs Farms Calendar</h1>
         </header>
         <div class="container">
-            
+
             <section class="span6 content">
                 <?php
                 echo $month->generateCalendar();
