@@ -2,7 +2,6 @@
 require_once 'lib/includes/utilities.inc.php';
 
 use website_project\calendar\Calendar as Calendar;
-use website_project\calendar\Controls as Controls;
 
 $month = new Calendar(); // Calendar Class:
 
