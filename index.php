@@ -5,23 +5,10 @@ use website_project\calendar\Calendar as Calendar;
 use website_project\calendar\Controls as Controls;
 
 $month = new Calendar(); // Calendar Class:
-$setMonth = new Controls(); // Calendar Control:
 
-/*
- * Grab user's input of calendar month change
- */
-$page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
+$displayDate = $month->changeDate(); // Change month to previous or next month if user clicks on the links:
 
-/* Set to Previous Month or Next Month depending */
-/* on what button the user clicks on .                       */
-if ($page) {
-    /*
-     * Determine Calendar to display based on user's input
-     */
-    $setMonth->setMonth($page); // Set the result of the key press:
-    $currentMonth = $setMonth->returnDate; // Get the result of key press:
-    $month->setDate($currentMonth); // Set the current Month to display:
-}
+$month->setDate($displayDate);
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +32,6 @@ President John R Pepp
             <section class="span6 content">
                 <?php
                 echo $month->generateCalendar();
-                echo $setMonth->returnControls;
                 ?> 
             </section>
 
