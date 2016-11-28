@@ -249,24 +249,20 @@ section.content {
   section.content a.sand {
     font-size: 1.8rem;
     color: #F4DECB; }
-  section.content .controls {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: auto;
-    height: auto; }
   section.content .prev-left, section.content .next-right {
-    float: left;
     text-decoration: none;
-    font-size: 1.4rem;
-    color: #F4DECB;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 30px; }
-    section.content .prev-left:hover, section.content .next-right:hover {
-      color: #F8EEE7; }
+    color: #F8EEE7;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    margin-top: 10px; }
+  section.content .prev-left {
+    float: left; }
+    section.content .prev-left:hover {
+      color: #94618E; }
   section.content .next-right {
-    margin-left: 450px; }
+    float: right; }
+    section.content .next-right:hover {
+      color: #94618E; }
 
 div.picture {
   position: relative;
