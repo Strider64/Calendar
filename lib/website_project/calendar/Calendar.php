@@ -18,7 +18,7 @@ class Calendar extends Location {
     protected $urlDate = \NULL;
     protected $sendDate = \NULL;
     protected $prev = \NULL;
-    protected $current = \NULL;
+    public $current = \NULL;
     protected $next = \NULL;
     protected $month = \NULL;
     protected $day = \NULL;
@@ -30,7 +30,7 @@ class Calendar extends Location {
     protected $isHoliday = \NULL;
     protected $prevMonth = \NULL;
     protected $nextMonth = \NULL;
-    protected $selectedMonth = \NULL;
+    public $selectedMonth = \NULL;
     public $n = \NULL;
     protected $calendar = array();
     protected $theForm = \NULL;
@@ -42,7 +42,7 @@ class Calendar extends Location {
 
     /* Constructor to create the calendar */
 
-    public function __construct($date = "Now", $size = 100) {
+    public function __construct($date = null, $size = 100) {
         $this->selectedMonth = new \DateTime($date, new \DateTimeZone("America/Detroit"));
         $this->current = new \DateTime($date, new \DateTimeZone("America/Detroit"));
         $this->size = $size;
@@ -118,7 +118,16 @@ class Calendar extends Location {
         $this->theForm .= "\t</tr>\n";
     }
 
-
+    protected function heading() {
+        /* Create heading for the calendar */
+        $this->theForm .= "\t<tr>\n";
+        $this->theForm .= "\t\t" . '<th class="tableHeading" colspan="7">';
+        $this->theForm .= '<a data-pos="prev" class="prev-left" href="'. $this->fileLocation() . '?location=prev">Prev</a>';
+        $this->theForm .= $this->current->format('F Y');
+        $this->theForm .= '<a data-pos="next" class="next-right" href="'. $this->fileLocation() . '?location=next">Next</a>';
+        $this->theForm .= "</th>\n";
+        $this->theForm .= "\t</tr>\n";
+    }
 
     protected function display() {
 
@@ -127,11 +136,7 @@ class Calendar extends Location {
         $this->days = $this->current->format('t'); // Number of days in the month:
         /* Create the table */
         $this->theForm .= '<table style="width:' . $this->size . '%;">' . "\n";
-        /* Create heading for the calendar */
-        $this->theForm .= "\t<tr>\n";
-        $this->theForm .= "\t\t" . '<th class="tableHeading" colspan="7">' . $this->current->format('F Y') . '</th>' . "\n";
-        $this->theForm .= "\t</tr>\n";
-
+        $this->heading();
         /* Create days of the week heading (columns) */
         $this->theForm .= "\t<tr>\n";
         for ($x = 0; $x <= 6; $x++) {
