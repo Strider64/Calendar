@@ -8,7 +8,7 @@ $month = new Calendar(); // Calendar Class:
 
 $displayDate = $month->changeDate(); // Change month to previous or next month if user clicks on the links:
 
-$month->setDate($displayDate);
+$month->setDate($displayDate); // Set the changed month to Display the correct user's input:
 ?>
 
 <!DOCTYPE html>
