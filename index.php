@@ -39,7 +39,7 @@ President John R Pepp
             </section>
         </div>
         <footer class="container footer">
-            <p class="footer-name">&copy;<?php echo date("Y"); ?> <span class="spacing" itemprop="name">John R. Pepp</span> <span class="spacing" itemprop="streetAddress">9198 Woodring</span><span class="spacing" itemprop="addressLocality">Livonia</span><span class="spacing" itemprop="addressRegion">MI</span><span class="spacing" itemprop="postalCode">48150</span><span class="spacing" itemprop="telephone">(734) 748-7661</span></p>            
+            <p class="footer-name">&copy;<?php echo date("Y"); ?> <span class="spacing">Pepster's Place</span></p>            
         </footer>
     </body>
 </html>
