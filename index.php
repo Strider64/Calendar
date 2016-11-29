@@ -4,11 +4,8 @@ require_once 'lib/includes/utilities.inc.php';
 use website_project\calendar\Calendar as Calendar;
 
 $month = new Calendar(); // Calendar Class:
-$location = filter_input(INPUT_GET, 'location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-if (isset($location)) {
-    $month->setDate($location);
-}
+$month->setDate();
 
 ?>
 
