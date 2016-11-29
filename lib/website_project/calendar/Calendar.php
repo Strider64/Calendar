@@ -39,6 +39,10 @@ class Calendar extends Location {
     protected $myPage = \NULL;
     protected $size = \NULL;
     protected $now = \NULL;
+    protected $monthlyChange = \NULL;
+
+
+    
 
     /* Constructor to create the calendar */
 
@@ -122,17 +126,17 @@ class Calendar extends Location {
     }
 
     protected function heading() {
-        $monthlyChange = new DateTime($this->current->format("F j, Y"));
-        $monthlyChange->modify("-1 month");
-        $prev = $monthlyChange->format("Y-m-d");
-        $monthlyChange->modify("+2 month");
-        $next = $monthlyChange->format("Y-m-d");
+        $this->monthlyChange= new DateTime($this->current->format("F j, Y"));
+        $this->monthlyChange->modify("-1 month");
+        $this->prev = $this->monthlyChange->format("Y-m-d");
+        $this->monthlyChange->modify("+2 month");
+        $this->next = $this->monthlyChange->format("Y-m-d");
         /* Create heading for the calendar */
         $this->theForm .= "\t<tr>\n";
         $this->theForm .= "\t\t" . '<th class="tableHeading" colspan="7">';
-        $this->theForm .= '<a data-pos="prev" class="prev-left" href="' . $this->fileLocation() . '?location=' . $prev . '">Prev</a>';
+        $this->theForm .= '<a data-pos="prev" class="prev-left" href="' . $this->fileLocation() . '?location=' . $this->prev . '">Prev</a>';
         $this->theForm .= $this->current->format('F Y');
-        $this->theForm .= '<a data-pos="next" class="next-right" href="' . $this->fileLocation() . '?location=' . $next . '">Next</a>';
+        $this->theForm .= '<a data-pos="next" class="next-right" href="' . $this->fileLocation() . '?location=' . $this->next . '">Next</a>';
         $this->theForm .= "</th>\n";
         $this->theForm .= "\t</tr>\n";
     }
@@ -166,22 +170,6 @@ class Calendar extends Location {
 
         /* Close the HTML tags */
         return $this->theForm .= "</table>\n";
-    }
-
-    public function getDisplayDate() {
-        return $this->selectedMonth->format('l, F j, Y');
-    }
-
-    public function getTodaysDate() {
-        return $this->selectedMonth->format('F j, Y');
-    }
-
-    public function get3MonthDate() {
-        return $this->selectedMonth->format('M j, Y');
-    }
-
-    public function getDateMySQL() {
-        return $this->selectedMonth->format('Y-m-n');
     }
 
     public function generateCalendar() {
