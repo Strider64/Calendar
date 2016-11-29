@@ -46,6 +46,8 @@ class Calendar extends Location {
     public function __construct($date = null, $size = 100) {
         $this->selectedMonth = new \DateTime($date, new \DateTimeZone("America/Detroit"));
         $this->current = new \DateTime($date, new \DateTimeZone("America/Detroit"));
+        $this->current->modify("first day of this month");
+        $this->n = $this->current->format("n");
         $this->size = $size;
     }
 
@@ -144,9 +146,6 @@ class Calendar extends Location {
     }
 
     protected function display() {
-
-        $this->current->modify("first day of this month");
-        $this->n = $this->current->format("n");
         $this->days = $this->current->format('t'); // Number of days in the month:
         /* Create the table */
         $this->theForm .= '<table style="width:' . $this->size . '%;">' . "\n";
