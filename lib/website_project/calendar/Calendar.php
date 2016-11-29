@@ -49,11 +49,14 @@ class Calendar extends Location {
     }
 
     public function fileLocation() {
-        $this->myPage = $this->returnLocation();
+        return $this->returnLocation();
     }
 
-    public function setDate($setDate, $size = 100) {
-        self::__construct($setDate, $size);
+    public function setDate($size = 100) {
+        $setDate = filter_input(INPUT_GET, 'location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if (isset($setDate)) {
+            self::__construct($setDate, $size);
+        }
     }
 
     public function returnDate() {
@@ -127,9 +130,9 @@ class Calendar extends Location {
         /* Create heading for the calendar */
         $this->theForm .= "\t<tr>\n";
         $this->theForm .= "\t\t" . '<th class="tableHeading" colspan="7">';
-        $this->theForm .= '<a data-pos="prev" class="prev-left" href="index.php?location=' . $prev . '">Prev</a>';
+        $this->theForm .= '<a data-pos="prev" class="prev-left" href="' . $this->fileLocation() . '?location=' . $prev . '">Prev</a>';
         $this->theForm .= $this->current->format('F Y');
-        $this->theForm .= '<a data-pos="next" class="next-right" href="index.php?location=' . $next . '">Next</a>';
+        $this->theForm .= '<a data-pos="next" class="next-right" href="' . $this->fileLocation() . '?location=' . $next . '">Next</a>';
         $this->theForm .= "</th>\n";
         $this->theForm .= "\t</tr>\n";
     }
