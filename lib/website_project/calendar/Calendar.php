@@ -119,12 +119,17 @@ class Calendar extends Location {
     }
 
     protected function heading() {
+        $monthlyChange = new DateTime($this->current->format("F j, Y"));
+        $monthlyChange->modify("-1 month");
+        $prev = $monthlyChange->format("Y-m-d");
+        $monthlyChange->modify("+2 month");
+        $next = $monthlyChange->format("Y-m-d");
         /* Create heading for the calendar */
         $this->theForm .= "\t<tr>\n";
         $this->theForm .= "\t\t" . '<th class="tableHeading" colspan="7">';
-        $this->theForm .= '<a data-pos="prev" class="prev-left" href="'. $this->fileLocation() . '?location=prev">Prev</a>';
+        $this->theForm .= '<a data-pos="prev" class="prev-left" href="index.php?location=' . $prev . '">Prev</a>';
         $this->theForm .= $this->current->format('F Y');
-        $this->theForm .= '<a data-pos="next" class="next-right" href="'. $this->fileLocation() . '?location=next">Next</a>';
+        $this->theForm .= '<a data-pos="next" class="next-right" href="index.php?location=' . $next . '">Next</a>';
         $this->theForm .= "</th>\n";
         $this->theForm .= "\t</tr>\n";
     }
