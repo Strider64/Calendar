@@ -4,10 +4,12 @@ require_once 'lib/includes/utilities.inc.php';
 use website_project\calendar\Calendar as Calendar;
 
 $month = new Calendar(); // Calendar Class:
+$location = filter_input(INPUT_GET, 'location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-$displayDate = $month->changeDate(); // Change month to previous or next month if user clicks on the links:
+if (isset($location)) {
+    $month->setDate($location);
+}
 
-$month->setDate($displayDate); // Set the changed month to Display the correct user's input:
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +31,9 @@ President John R Pepp
         <div class="container">
 
             <section class="span6 content">
-                <?php
-                echo $month->generateCalendar();
-                ?> 
+<?php
+echo $month->generateCalendar();
+?> 
             </section>
 
             <div class="span6 picture">`
