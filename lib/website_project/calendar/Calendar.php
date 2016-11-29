@@ -41,9 +41,6 @@ class Calendar extends Location {
     protected $now = \NULL;
     protected $monthlyChange = \NULL;
 
-
-    
-
     /* Constructor to create the calendar */
 
     public function __construct($date = null, $size = 100) {
@@ -56,9 +53,14 @@ class Calendar extends Location {
         return $this->returnLocation();
     }
 
+    public function checkIsAValidDate($myDateString) {
+        return (bool) strtotime($myDateString);
+    }
+
     public function setDate($size = 100) {
         $setDate = filter_input(INPUT_GET, 'location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        if (isset($setDate)) {
+        $valid = $this->checkIsAValidDate($setDate);
+        if (isset($setDate) && strlen($setDate) === 10 && $valid) {
             self::__construct($setDate, $size);
         }
     }
@@ -126,7 +128,7 @@ class Calendar extends Location {
     }
 
     protected function heading() {
-        $this->monthlyChange= new DateTime($this->current->format("F j, Y"));
+        $this->monthlyChange = new DateTime($this->current->format("F j, Y"));
         $this->monthlyChange->modify("-1 month");
         $this->prev = $this->monthlyChange->format("Y-m-d");
         $this->monthlyChange->modify("+2 month");
