@@ -148,7 +148,7 @@ class Calendar extends Location {
     protected function display() {
         $this->days = $this->current->format('t'); // Number of days in the month:
         /* Create the table */
-        $this->theForm .= '<table style="width:' . $this->size . '%;">' . "\n";
+        $this->theForm .= '<table>' . "\n";
         $this->heading();
         /* Create days of the week heading (columns) */
         $this->theForm .= "\t<tr>\n";
