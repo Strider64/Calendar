@@ -27,17 +27,17 @@ President John R Pepp
         </header>
         <div class="container">
 
-            <div class="span6 picture">`
-                <figure class="imageCalendar">
-                    <img class="current" src="lib/user_uploads/img-burroughs-farms-<?php echo $month->n; ?>.jpg">
-                </figure>
-            </div>
-            
-            <section class="span6 content">
-                <?php
-                echo $month->generateCalendar();
-                ?> 
-            </section>
+
+            <figure class="imageCalendar">
+                <img class="current" src="lib/user_uploads/img-burroughs-farms-<?php echo $month->n; ?>.jpg">
+            </figure>
+
+
+
+            <?php
+            echo $month->generateCalendar();
+            ?> 
+
         </div>
         <footer class="container footer">
             <p class="footer-name">&copy;<?php echo date("Y"); ?> <span class="spacing" itemprop="name">Pepster's Place</span></span></p>            
