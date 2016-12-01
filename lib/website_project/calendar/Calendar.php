@@ -59,7 +59,7 @@ class Calendar extends Location {
         return (bool) strtotime($myDateString);
     }
 
-    public function setDate($size = 100) {
+    public function phpDate($size = 100) {
         $setDate = filter_input(INPUT_GET, 'location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $valid = $this->checkIsAValidDate($setDate);
         if (isset($setDate) && strlen($setDate) === 10 && $valid) {
