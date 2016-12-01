@@ -413,9 +413,10 @@ footer.footer {
   HEADING CSS STYLING
   ********************************************/
   header.header {
+    width: 90%;
     height: 50px;
     background-color: #49274A;
-    margin: 0; }
+    margin: 0 auto; }
     header.header h1 {
       font-size: 1.2rem;
       line-height: 50px;
@@ -425,11 +426,12 @@ footer.footer {
   figure.imageCalendar {
     float: none;
     display: block;
-    width: 100%;
+    width: 90%;
     max-width: 100%;
     height: 100%;
     max-height: 591px;
-    background-color: #49274A; }
+    background-color: #49274A;
+    margin: 0 auto; }
     figure.imageCalendar img {
       display: block;
       width: 100%;
@@ -441,9 +443,10 @@ footer.footer {
   /* TABLE CSS STYLING */
   table {
     float: none;
-    width: 100%;
+    width: 90%;
     position: relative;
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    margin: 0 auto; }
 
   table, td {
     border: 3px solid #49274A; }
@@ -504,6 +507,8 @@ footer.footer {
       color: #94618E; }
 
   footer.footer {
-    background-color: #49274A; } }
+    width: 90%;
+    background-color: #49274A;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
