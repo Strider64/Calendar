@@ -5,7 +5,7 @@ use website_project\calendar\Calendar as Calendar;
 
 $month = new Calendar(); // Calendar Class:
 
-$month->setDate();
+$month->phpDate();
 ?>
 
 <!DOCTYPE html>
