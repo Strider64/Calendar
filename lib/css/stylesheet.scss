@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption|Palanquin+Dark');
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/size";
+@import "partials/reset";
+@import "partials/grids";
+
+
+
+/*******************************************
+TYPOGRAPHY CSS STYLING
+********************************************/
+h1, th {
+    font-family: 'PT Serif Caption', serif;
+}
+p, td {
+    font-family: 'Palanquin Dark', sans-serif;
+}
+
+
+
+/*******************************************
+GENERAL PAGE CSS STYLING
+********************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $sand;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+/*******************************************
+HEADING CSS STYLING
+********************************************/
+header.header {
+    height: 150px;
+    background-color: $grape;
+    h1 {
+        font-size: 4.2rem;
+        line-height: 150px;
+        color: $sand;
+        text-align: center;
+    }
+}
+
+
+
+
+/*******************************************
+MAIN CONTENT CSS STYLING
+********************************************/
+figure.imageCalendar {
+    float: left;
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 591px;
+    img {
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        max-height: 591px;
+    }
+}
+
+
+
+
+/* TABLE CSS STYLING */
+table {
+    float: left;
+    width: 50%;
+    position: relative;
+    border-collapse: collapse;
+}
+table,td {
+    border: 3px solid $eggplant;
+}
+th.tableHeading {
+    background-color: $eggplant;
+    font-size: 2.4rem;
+    color: $sand;
+}
+th {
+    vertical-align: bottom;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $sand;
+    width: 14.2857143%;
+    height: 50px;
+    padding: 10px;
+    background-color: $grape;
+}
+td {
+    background-color: $grape;
+    vertical-align: middle;
+    width: 14.2857143%;
+    height: 80px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: $shell;
+    padding: 10px;
+    a {
+        text-decoration: none;
+        color: $shell;
+    }
+}
+td.fade {
+    color: $grey;
+}
+td.eggplant {
+    background-color: $eggplant;
+}
+a.sand {
+    font-size: 1.8rem;
+    color: $sand;
+}
+.prev-left, .next-right {
+    text-decoration: none;
+    color: $shell;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+.prev-left {
+    float: left;
+
+    &:hover {
+        color: $grape;
+    }
+}
+.next-right {
+    float: right;
+    &:hover {
+        color: $grape;
+    }
+}
+
+
+
+
+
+/*******************************************
+FOOTER CSS STYLING
+********************************************/
+footer.footer {
+    height: 50px;
+    background-color: $grape;
+    p.footer-name {
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 50px;
+        color: $sand;
+        span {
+            padding-left: 5px;
+        }
+    }
+}
+
+/* SMARTPHONE MEDIA QUERY STYLING */
+@media only screen and (max-width: 480px) { 
+    [class^="span"] {
+        width: 100%;
+    }
+
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    header.header {
+        height: 50px;
+        background-color: $eggplant;
+        margin: 0;
+        h1 {
+            font-size: 1.2rem;
+            line-height: 50px;
+            color: $sand;
+            text-align: center;
+        }
+    }
+
+
+
+    figure.imageCalendar {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 591px;
+        background-color: $eggplant;
+        img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            max-height: 591px;
+            margin: 0 auto;
+        }
+    }
+
+
+    /* TABLE CSS STYLING */
+    table {
+        float: none;
+        width: 100%;
+        position: relative;
+        border-collapse: collapse;
+    }
+    table,td {
+        border: 1px solid $eggplant;
+    }
+    th.tableHeading {
+        height: 50px;
+        background-color: $eggplant;
+        font-size: 1.2rem;
+        color: $sand;
+    }
+    th {
+        vertical-align: bottom;
+        font-size: 1.0rem;
+        font-weight: bold;
+        color: $sand;
+        width: 14.2857143%;
+        height: 30px;
+        padding: 10px;
+        background-color: $grape;
+    }
+    td {
+        background-color: $grape;
+        vertical-align: middle;
+        width: 14.2857143%;
+        height: 40px;
+        font-size: 1.0rem;
+        text-align: center;
+        color: $shell;
+        padding: 10px;
+        a {
+            text-decoration: none;
+            color: $shell;
+        }
+    }
+    td.fade {
+        color: $grey;
+    }
+    td.eggplant {
+        background-color: $eggplant;
+    }
+    a.sand {
+        font-size: 1.4rem;
+        color: $sand;
+    }
+    .prev-left, .next-right {
+        position: relative;
+        bottom: 9px;
+        text-decoration: none;
+        color: $shell;
+        font-size: 1.0rem;
+    }
+    .prev-left {
+        float: left;
+
+        &:hover {
+            color: $grape;
+        }
+    }
+    .next-right {
+        float: right;
+        &:hover {
+            color: $grape;
+        }
+    }
+    footer.footer {
+        background-color: $eggplant;
+    }
+}
+/* TABLET MEDIA QUERY STYLING */
+@media only screen and (min-width: 481px) and (max-width: 1200px) { 
+    [class^="span"] {
+        width: 100%;
+    }    
+
+
+
+    /*******************************************
+    HEADING CSS STYLING
+    ********************************************/
+    header.header {
+        width: 90%;
+        height: 50px;
+        background-color: $eggplant;
+        margin: 0 auto;
+        h1 {
+            font-size: 1.2rem;
+            line-height: 50px;
+            color: $sand;
+            text-align: center;
+        }
+    }
+
+
+
+    figure.imageCalendar {
+        float: none;
+        display: block;
+        width: 90%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 591px;
+        background-color: $eggplant;
+        margin: 0 auto;
+        img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            max-height: 591px;
+            margin: 0 auto;
+        }
+    }
+
+
+    /* TABLE CSS STYLING */
+    table {
+        float: none;
+        width: 90%;
+        position: relative;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    table,td {
+        border: 3px solid $eggplant;
+    }
+    th.tableHeading {
+        background-color: $eggplant;
+        font-size: 1.8rem;
+        color: $sand;
+    }
+    th {
+        vertical-align: bottom;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $sand;
+        width: 14.2857143%;
+        height: 50px;
+        padding: 10px;
+        background-color: $grape;
+    }
+    td {
+        background-color: $grape;
+        vertical-align: middle;
+        width: 14.2857143%;
+        height: 80px;
+        font-size: 1.2rem;
+        text-align: center;
+        color: $shell;
+        padding: 10px;
+        a {
+            text-decoration: none;
+            color: $shell;
+        }
+    }
+    td.fade {
+        color: $grey;
+    }
+    td.eggplant {
+        background-color: $eggplant;
+    }
+    a.sand {
+        font-size: 1.8rem;
+        color: $sand;
+    }
+    .prev-left, .next-right {
+        text-decoration: none;
+        color: $shell;
+        font-size: 1.2rem;
+        padding: 0 20px;
+        margin-top: 10px;
+    }
+    .prev-left {
+        float: left;
+
+        &:hover {
+            color: $grape;
+        }
+    }
+    .next-right {
+        float: right;
+        &:hover {
+            color: $grape;
+        }
+    }
+
+    
+    footer.footer {
+        width: 90%;
+        background-color: $eggplant;
+        margin: 0 auto;
+    }
+}
