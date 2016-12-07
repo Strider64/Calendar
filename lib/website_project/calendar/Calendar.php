@@ -103,7 +103,7 @@ class Calendar extends Location {
 
     protected function currentDays() {
         if ($this->now->format("F j, Y") === $this->current->format("F j, Y")) {
-            $this->theForm .= "\t\t" . '<td class="eggplant"><a class="sand" href="daily.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
+            $this->theForm .= "\t\t" . '<td class="background"><a class="foreground" href="daily.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
         } else {
             $this->theForm .= "\t\t" . '<td><a href="daily.php?date=' . $this->current->format('Y-m-j') . '">' . $this->current->format("j") . '</a></td>' . "\n";
         }
