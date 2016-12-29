@@ -24,7 +24,7 @@ if ($pageName !== 'Index') {
     </head>
     <body>
         <header id="heading" class="container">
-            <h3>Burroughs Farms</h3>
+            
         </header>
         <nav id="navigation" class="container nav-bar">
             <ul class="topnav" id="myTopnav">
@@ -36,5 +36,6 @@ if ($pageName !== 'Index') {
                 <li class="icon">
                     <a href='#'>&#9776;</a>
                 </li>    
+                <?php echo (isset($trackerMember)) ? '<li><a href="logout.php">Logout</a></li>' : NULL; ?>
             </ul>
         </nav>
