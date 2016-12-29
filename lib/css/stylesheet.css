@@ -183,12 +183,14 @@ p, td {
   font-family: 'Palanquin Dark', sans-serif; }
 
 body {
-  background-color: #def3f7; }
+  background-color: #CAEBF2; }
 
 header#heading {
   height: 100%;
   min-height: 150px;
-  background-color: #A9A9A9; }
+  background-color: #A9A9A9;
+  background-image: url(../images/img-header-01.png);
+  background-repeat: no-repeat; }
   header#heading h3 {
     font-size: 4.8rem;
     line-height: 150px;
@@ -202,7 +204,7 @@ nav.nav-bar {
 ul.topnav {
   list-style-type: none;
   overflow: hidden;
-  background-color: #2E2E2E;
+  background-color: #d40004;
   padding: 0; }
 
 ul.topnav li {
@@ -224,12 +226,12 @@ ul.topnav li a:hover {
 
 footer.footer {
   height: 50px;
-  background-color: #2E2E2E; }
+  background-color: #d40004; }
   footer.footer p.footer-name {
     text-align: center;
     font-size: 1.2rem;
     line-height: 50px;
-    color: #A9A9A9; }
+    color: #EFEFEF; }
     footer.footer p.footer-name span {
       padding-left: 15px; }
 
@@ -317,16 +319,26 @@ footer.footer {
       background-color: #A9A9A9;
       vertical-align: middle;
       width: 14.2857143%;
-      height: 40px;
+      height: 50px;
       font-size: 1.0rem;
       text-align: center;
-      color: #CAEBF2;
-      padding: 10px; }
+      color: #CAEBF2; }
       table td a {
+        display: inline-block;
+        width: 100%;
+        height: inherit;
+        background-color: #838383;
         text-decoration: none;
-        color: #EFEFEF; }
-    table td.background {
+        color: #EFEFEF;
+        line-height: 50px;
+        padding: 0;
+        margin: 0; }
+        table td a:hover {
+          background-color: dimgray; }
+    table td.background a {
       background-color: #ff080d; }
+      table td.background a:hover {
+        background-color: dimgray; }
     table a.foreground {
       font-size: 1.4rem;
       color: #FFFFFF; }
@@ -430,16 +442,26 @@ footer.footer {
           background-color: #A9A9A9;
           vertical-align: middle;
           width: 14.2857143%;
-          height: 40px;
-          font-size: 1.0rem;
+          height: 50px;
+          font-size: 1.2rem;
           text-align: center;
-          color: #CAEBF2;
-          padding: 10px; }
+          color: #CAEBF2; }
           div#home aside.sidebar table td a {
+            display: inline-block;
+            width: 100%;
+            height: inherit;
+            background-color: #838383;
             text-decoration: none;
-            color: #EFEFEF; }
-        div#home aside.sidebar table td.background {
+            color: #EFEFEF;
+            line-height: 50px;
+            padding: 0;
+            margin: 0; }
+            div#home aside.sidebar table td a:hover {
+              background-color: dimgray; }
+        div#home aside.sidebar table td.background a {
           background-color: #ff080d; }
+          div#home aside.sidebar table td.background a:hover {
+            background-color: dimgray; }
         div#home aside.sidebar table a.foreground {
           font-size: 1.4rem;
           color: #FFFFFF; }
@@ -488,6 +510,185 @@ footer.footer {
   ul.topnav li.icon {
     display: none; }
 
+  /* Tracker CSS Styling */
+  div.trackerBackground {
+    background-color: #FFFFFF;
+    padding: 20px; }
+
+  aside.trackerInfo {
+    height: auto;
+    background-color: #FFFFFF;
+    padding: 0 20px; }
+    aside.trackerInfo h1 {
+      font-family: 'PT Serif Caption', serif;
+      font-size: 2.4rem;
+      line-height: 1.5;
+      color: #2E2E2E; }
+    aside.trackerInfo p {
+      font-family: 'Palanquin Dark', sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      font-weight: bold;
+      color: #2E2E2E; }
+    aside.trackerInfo .error {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+      color: #FF3B3F;
+      padding-top: 20px; }
+
+  form#login {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    min-height: 150px;
+    background-color: #5d5d5d;
+    padding: 15px;
+    margin: 0 auto 20px; }
+    form#login fieldset {
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      border: 5px solid #EFEFEF;
+      padding: 15px; }
+    form#login legend {
+      font-family: 'PT Serif Caption', serif;
+      font-size: 1.8rem;
+      color: #EFEFEF;
+      padding: 0 5px; }
+    form#login label {
+      float: left;
+      display: block;
+      width: 100%;
+      max-width: 150px;
+      height: 30px;
+      background-color: #ff3b3f;
+      font-family: 'PT Serif Caption', serif;
+      font-size: 1.0rem;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      text-transform: capitalize;
+      color: #EFEFEF;
+      padding: 0 10px; }
+    form#login input {
+      clear: right;
+      display: block;
+      outline: none;
+      border: none;
+      width: 100%;
+      max-width: 180px;
+      height: 30px;
+      font-family: 'Palanquin Dark', sans-serif;
+      font-size: 1.0rem;
+      line-height: 30px;
+      padding: 0 5px;
+      margin-bottom: 10px; }
+    form#login input[type=submit] {
+      -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      float: right;
+      display: block;
+      width: 100%;
+      max-width: 100px;
+      height: 40px;
+      cursor: pointer;
+      background-color: #FF3B3F;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      color: #EFEFEF;
+      margin-top: 10px;
+      margin-right: 10px; }
+      form#login input[type=submit]:hover {
+        background-color: #ee0005; }
+
+  form#tracker {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #5d5d5d;
+    display: block;
+    width: 100%;
+    max-width: 605px;
+    height: 100%;
+    min-height: 400px;
+    padding: 20px; }
+    form#tracker fieldset {
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      border: 5px double #EFEFEF;
+      padding: 30px; }
+    form#tracker legend {
+      font-family: 'PT Serif Caption', serif;
+      font-size: 1.8rem;
+      color: #EFEFEF;
+      padding: 0 5px; }
+    form#tracker label {
+      float: left;
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      height: 40px;
+      font-family: 'PT Serif Caption', serif;
+      font-size: 1.4rem;
+      font-weight: bold;
+      line-height: 40px;
+      text-align: left;
+      background-color: #ff3b3f;
+      color: #EFEFEF;
+      padding: 0 10px; }
+    form#tracker input {
+      clear: right;
+      display: block;
+      outline: none;
+      border: none;
+      width: 100%;
+      max-width: 300px;
+      height: 40px;
+      font-family: 'Palanquin Dark', sans-serif;
+      font-size: 1.0rem;
+      line-height: 40px;
+      padding: 0 5px;
+      margin-bottom: 10px; }
+    form#tracker input[type="text"]:read-only {
+      background-color: #CCCCCC;
+      color: #2E2E2E; }
+    form#tracker input[type=submit] {
+      -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      float: right;
+      display: block;
+      width: 100%;
+      max-width: 100px;
+      height: 40px;
+      cursor: pointer;
+      background-color: #FF3B3F;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      color: #EFEFEF;
+      margin-top: 10px;
+      margin-right: 10px; }
+      form#tracker input[type=submit]:hover {
+        background-color: #ee0005; }
+
   aside.sidebar {
     /* Calendar CSS */ }
     aside.sidebar figure.pictureBox {
@@ -524,16 +725,26 @@ footer.footer {
         background-color: #A9A9A9;
         vertical-align: middle;
         width: 14.2857143%;
-        height: 40px;
-        font-size: 1.0rem;
+        height: 50px;
+        font-size: 1.2rem;
         text-align: center;
-        color: #CAEBF2;
-        padding: 10px; }
+        color: #CAEBF2; }
         aside.sidebar table td a {
+          display: inline-block;
+          width: 100%;
+          height: inherit;
+          background-color: #838383;
           text-decoration: none;
-          color: #EFEFEF; }
-      aside.sidebar table td.background {
-        background-color: #ff080d; }
+          color: #EFEFEF;
+          line-height: 50px;
+          padding: 0;
+          margin: 0; }
+          aside.sidebar table td a:hover {
+            background-color: dimgray; }
+      aside.sidebar table td.background a {
+        background-color: #FF3B3F; }
+        aside.sidebar table td.background a:hover {
+          background-color: dimgray; }
       aside.sidebar table a.foreground {
         font-size: 1.4rem;
         color: #FFFFFF; }
